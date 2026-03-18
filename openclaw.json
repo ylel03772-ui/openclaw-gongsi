@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-17T07:46:01.876Z"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "sk-cp-ygD92HI3ExF8griC-0vqO1-snD6CWhcU49QW7-epsnjw2pm_Ic5AgdFw7UiKzUZhWTIUtE32hc61ZKG3V8JkdI0RQtD5x4Gh0FnhDCMlp_Xvp_CgrKMJ4LI",
+        "api": "anthropic-messages",
+        "authHeader": true,
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax 2.5",
+            "reasoning": true,
+            "input": ["text", "image"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 200000,
+            "maxTokens": 32768
+          }
+        ]
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-17T07:46:01.873Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "minimax/MiniMax-M2.5" },
+      "workspace": "/Users/mingmacmini/.openclaw/workspace-gongsi",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "accounts": {
+        "default": {
+          "appId": "cli_a932404546fadcca",
+          "appSecret": "cDzssjna2rJeDJoBE0oJIelI1LfjXCfj"
+        }
+      },
+      "allowFrom": [
+        "*"
+      ]
+    }
+  },
+  "gateway": {
+    "port": 28790,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "enabled": true,
+      "basePath": "/openclaw",
+      "allowInsecureAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "f76186fbf14196a1cb4d9b5cf01994dc12a13e1d69db9a99"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "feishu"
+    ],
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    }
+  }
+}
